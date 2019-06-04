@@ -22,7 +22,7 @@ services:
     command: ["/app/gradlew", "bootRun"]
   db:
     image: postgres:11.3
-    container_name: postgres
+    container_name: postgres-113
     environment:
       PGDATA: /var/lib/postgresql/data/case_data
       POSTGRES_USER: api_user
@@ -30,7 +30,7 @@ services:
     volumes:
       - postgres_db:/var/lib/postgresql/data/case_data
     ports:
-      - "5440:5432"
+      - "6432:5432"
 volumes:
   postgres_db:
   gradle_cache:
